@@ -8,7 +8,7 @@ const challengeAddress: string = "0x3a476198a3d3176a31a0d9746e9B16a830bb952B";
 
 beforeEach(async () => {
   const blockhashFactory = await ethers.getContractFactory("PredictTheBlockHashChallenge");
-  blockhashContract = await blockhashFactory.attach(challengeAddress);
+  blockhashContract = blockhashFactory.attach(challengeAddress);
 })
 
 describe("Predict The Blockhash", async () => {
