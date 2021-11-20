@@ -7,7 +7,6 @@ let tokenSaleContract: Contract;
 const challengeAddress: string = "0xe62F507aA3c232d1a4783a3fE63de9E0A54ddB2A" //Address a usar cuando se intente resolver el challenge con el contrato de CTE, no el deployado localmente.
 let eoa: Signer
 let accounts: Signer[];
-let buyValueFounded: boolean;
 const MAX_UINT256_NUMBER: BigNumber = BigNumber.from(`2`).pow(`256`);
 const ONE_ETHER: BigNumber = BigNumber.from(`10`).pow(`18`);
 
@@ -16,8 +15,6 @@ beforeEach(async () => {
 
   const tokenSaleFactory = await ethers.getContractFactory("TokenSaleChallenge");
   tokenSaleContract = tokenSaleFactory.attach(challengeAddress);
-
-
 })
 
 describe("Token sale", async () => {
