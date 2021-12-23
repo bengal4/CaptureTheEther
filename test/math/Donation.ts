@@ -18,9 +18,10 @@ describe("Donation", async () => {
   it("Resuelve el Math challenge - Donation", async () => {
     // Necesitamos convertir nuestro address a un uint256 (que sería el etherAmount)
     const eoaEnUint256 = BigNumber.from(await accounts[0].getAddress());
+    console.log(`Nuestro address en forma de numero tiene la pinta de: ${eoaEnUint256}`);
 
     //Llamamos a la función donate. Acá sobreescribimos el slot 1 del storage con nuestro address.
-    const txDonate = await donationContract.donate(eoaEnUint256.toString(),
+    const txDonate = await donationContract.donate(eoaEnUint256,
       {
         value: eoaEnUint256.div(BigNumber.from('10').pow('36'))
       })
